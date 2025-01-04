@@ -17,6 +17,26 @@
   "publishConfig": {
     "access": "public"
   },
+  "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "master",
+      "next",
+      "next-major",
+      {
+        "name": "development",
+        "prerelease": true
+      },
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ]
+  },
   "license": "MIT",
   "scripts": {
     "build": "tsc --build",
@@ -46,7 +66,7 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "busboy": "^1.6.0"
+    "busboy": "github:kidylee/busboy"
   },
   "peerDependencies": {
     "@nestjs/common": "^10.x",

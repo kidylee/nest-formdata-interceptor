@@ -96,7 +96,7 @@ export class FormdataInterceptor implements NestInterceptor {
         });
 
         fileStream.on("end", async () => {
-          if(fileInfo.filename === undefined && fileInfo.mimeType === "application/octet-stream"){
+          if(!fileInfo.filename && fileInfo.mimeType === "application/octet-stream"){
             this.handleField(files, fieldName, undefined);
             return
           }
